@@ -10,3 +10,4 @@ packages = [{ include = "*", from = "src" }]
 
 [tool.poetry.dependencies]
 python = "~=3.10"
+python-telegram-bot = "~=13.7"
