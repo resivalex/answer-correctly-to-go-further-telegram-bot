@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.poetry]
+name = "answer-correctly-to-go-further-telegram-bot"
+version = "0.0.1"
+description = ""
+authors = ["Ivan Reshetnikov <resivalex@gmail.com>"]
+packages = [{ include = "*", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "~=3.10"

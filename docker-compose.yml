@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    command: sh run_app.sh
+    container_name: tbot__app
+    volumes:
+      - .:/app
+  env:
+    build: .
+    command: sh run_env.sh
+    container_name: tbot__env
+    volumes:
+      - .:/app
