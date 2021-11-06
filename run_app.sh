@@ -3,4 +3,4 @@
 set -e
 
 poetry update
-poetry run python src/bot.py
+poetry run python src/main.py
