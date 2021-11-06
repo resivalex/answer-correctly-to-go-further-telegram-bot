@@ -23,8 +23,7 @@ dispatcher = updater.dispatcher
 
 
 def start(update, context):
-    logger.log('/start was triggered')
-    print(update.effective_chat.id)
+    logger.log(f'/start was triggered\n{str(update.effective_chat)}')
     context.bot.send_message(chat_id=update.effective_chat.id, text="Welcome!")
 
 
@@ -33,6 +32,7 @@ def upper_and_lower_case(update, context):
     message = update.message.text
 
     response = f'{message.upper()}\n{message.lower()}'
+    logger.log(f'Chat {chat_id}:\n{message}\nBot:\n{response}')
     context.bot.send_message(chat_id=chat_id, text=response)
 
 
