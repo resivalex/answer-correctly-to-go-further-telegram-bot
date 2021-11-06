@@ -1,7 +1,7 @@
 import json
 from chat_logger import ChatLogger
 from null_logger import NullLogger
-from lowercase_interlocutor import LowercaseInterlocutor
+from counter_interlocutor import CouterInterlocutor
 from chat import Chat
 
 
@@ -17,15 +17,15 @@ if 'logger_chat' in config:
 else:
     logger = NullLogger()
 
-interlocutor = LowercaseInterlocutor()
+interlocutor = CouterInterlocutor()
 
 
-def _on_start():
-    return interlocutor.greet()
+def _on_start(chat_id: int):
+    return interlocutor.greet(chat_id)
 
 
-def _on_message(message):
-    return interlocutor.say(message)
+def _on_message(chat_id: int, message: str):
+    return interlocutor.say(chat_id, message)
 
 
 chat = Chat(bot_token=token,

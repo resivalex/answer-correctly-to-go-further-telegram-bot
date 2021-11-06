@@ -26,7 +26,7 @@ class Chat:
         def callback(update, context):
             chat_id = update.effective_chat.id
             self.__logger.log(f'/start was triggered\n{str(update.effective_chat)}')
-            context.bot.send_message(chat_id=chat_id, text=self.__start_callback())
+            context.bot.send_message(chat_id=chat_id, text=self.__start_callback(chat_id))
 
         return callback
 
@@ -35,7 +35,7 @@ class Chat:
             chat_id = update.effective_chat.id
             message = update.message.text
 
-            response = self.__message_callback(message)
+            response = self.__message_callback(chat_id, message)
             self.__logger.log(f'Chat {chat_id}:\n{message}\n\nBot:\n{response}')
             context.bot.send_message(chat_id=chat_id, text=response)
 
