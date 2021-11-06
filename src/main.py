@@ -1,7 +1,7 @@
 import json
 from chat_logger import ChatLogger
 from null_logger import NullLogger
-from counter_interlocutor import CouterInterlocutor
+from quiz_interlocutor import QuizInterlocutor
 from chat import Chat
 
 
@@ -17,7 +17,7 @@ if 'logger_chat' in config:
 else:
     logger = NullLogger()
 
-interlocutor = CouterInterlocutor()
+interlocutor = QuizInterlocutor(config['quiz'])
 
 
 def _on_start(chat_id: int):

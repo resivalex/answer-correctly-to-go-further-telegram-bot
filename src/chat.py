@@ -25,8 +25,9 @@ class Chat:
     def __get_tg_start_callback(self):
         def callback(update, context):
             chat_id = update.effective_chat.id
-            self.__logger.log(f'/start was triggered\n{str(update.effective_chat)}')
-            context.bot.send_message(chat_id=chat_id, text=self.__start_callback(chat_id))
+            response = self.__start_callback(chat_id)
+            self.__logger.log(f'/start was triggered\n{str(update.effective_chat)}\nBot:\n{response}')
+            context.bot.send_message(chat_id=chat_id, text=response)
 
         return callback
 
